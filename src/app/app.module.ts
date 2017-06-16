@@ -25,7 +25,6 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
-import { HomeComponent } from './home';
 import { NumPadComponent } from './numpad';
 import { NumPadState, NumPadStateType } from './numpad/numpad.service';
 
@@ -53,7 +52,6 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    HomeComponent,
     NumPadComponent
   ],
   /**

@@ -49,7 +49,13 @@ export class NumPadComponent implements OnInit {
   
   public backspace(){
     let result = this.numPadState.backspace(this.numPadLocalState.displayText, this.numPadLocalState.point);
-    this.numPadLocalState.displayText = result.newValue;
+    this.numPadLocalState.displayText = result.newDisplayText;
+    this.numPadLocalState.point = result.newPoint;
+  }
+  
+  public type(newChar : string){
+    let result = this.numPadState.type(this.numPadLocalState.displayText, newChar, this.numPadLocalState.point);
+    this.numPadLocalState.displayText = result.newDisplayText;
     this.numPadLocalState.point = result.newPoint;
   }
 }

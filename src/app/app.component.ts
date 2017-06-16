@@ -26,7 +26,7 @@ import { AppState } from './app.service';
       </a>
       <a [routerLink]=" ['./numpad'] "
         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
+        NumPad
       </a>
     </nav>
     

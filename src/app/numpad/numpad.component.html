@@ -1,13 +1,13 @@
 <md-grid-list class="simple-numpad" cols="3" rowHeight="45px">
     <md-grid-tile class='numpad-display' colspan="3" rowspan="3">
         <div class='numpad-display-content'>
-            <div class='numpad-display-header'>Pushups</div>
+            <div class='numpad-display-header'>{{ numPadLocalState.displayHeader }}</div>
             <br>
-            <div class="numpad-display-text">25</div>
+            <div class="numpad-display-text">{{ numPadLocalState.displayText }}</div>
             <br>
             <div class="numpad-meta">
-                <div class="numpad-period">Week 7</div>
-                <div class="numpad-goal">150/200</div>
+                <div class="numpad-period">{{ numPadLocalState.period.unit }}: {{ numPadLocalState.period.index }}</div>
+                <div class="numpad-goal">{{ numPadLocalState.done }}/{{ numPadLocalState.goal }}</div>
             </div>
         </div>
     </md-grid-tile>

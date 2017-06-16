@@ -5,7 +5,7 @@ import {
 
 import { MaterialModule } from '@angular/material';
 
-import { AppState } from '../app.service';
+import { NumPadState } from './numpad.service';
 
 @Component({
   /**
@@ -31,18 +31,18 @@ export class NumPadComponent implements OnInit {
   /**
    * Set our default values
    */
-  public localState = {};
+  public numPadLocalState = {};
   /**
    * TypeScript public modifiers
    */
   constructor(
-    public appState: AppState
+    public numPadState: NumPadState
   ) {}
 
   public ngOnInit() {
+    this.numPadLocalState = this.numPadState.state;
     console.log('hello `NumPad` component');
-    /**
-     * this.title.getData().subscribe(data => this.data = data);
-     */
   }
+  
+  
 }

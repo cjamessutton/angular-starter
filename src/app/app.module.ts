@@ -27,6 +27,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { NumPadComponent } from './numpad';
+import { NumPadState, NumPadStateType } from './numpad/numpad.service';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -34,11 +35,13 @@ import '../styles/headings.css';
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
-  AppState
+  AppState,
+  NumPadState
 ];
 
 type StoreType = {
   state: InternalStateType,
+  numpad: NumPadStateType,
   restoreInputValues: () => void,
   disposeOldHosts: () => void
 };

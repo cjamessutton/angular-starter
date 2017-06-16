@@ -9,14 +9,14 @@ export class NumPadState {
     
     public _state: NumPadStateType = {
         "displayHeader": "Pushups",
-        "displayText": "1234.5",
+        "displayText": "0",
         "period": {
             "unit": "Week",
             "index": "1"
         },
         "done": 0,
         "goal": 200,
-        "point": true //flag to track if a point has been entered
+        "point": false //flag to track if a point has been entered
     }
     
     public get state(){
@@ -41,13 +41,13 @@ export class NumPadState {
     public type(oldText : string, newChar : string, point : boolean){
         let newDisplayText = oldText;
         let newPoint = point;
-        if(oldText === '0' && /[0-9\.]/.test(newChar) ){
+        if(oldText === '0' && oldText.length < 10 && /[0-9\.]/.test(newChar) ){
             if( newChar === '.'){
                  newDisplayText = oldText + '.';
                  newPoint = true;
             }
             else if( newChar !== '0') newDisplayText = newChar;
-        } else if( /[0-9\.]/.test(newChar) ){
+        } else if( oldText.length < 10 && /[0-9\.]/.test(newChar) ){
             if( newChar === '.' && !point ){
                 newPoint = true;
                 newDisplayText = oldText + '.';

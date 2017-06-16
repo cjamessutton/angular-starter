@@ -1,49 +1,63 @@
 /*styles for numpad content only*/
 
 .simple-numpad {
+    background: #535962;
     width: 180px;
     border:1px solid black;
 }
 
 .numpad-display {
-    background: lightgray;
-}
-
-.numpad-display-content {
+    background: #26282C;
     display: flex;
     flex-flow: column;
+    width: 100%;
+}
 
+.numpad-display-content{
+    width:100%;
+}
+
+.numpad-keys{
+    cursor: pointer;
+    color: #929C47;
 }
 
 .numpad-display-header {
     flex: 1;
-    background: lightblue;
+    color: DarkGray;
+    font-size: small;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .numpad-display-text {
     flex: 2;
-    background: lightgreen;
+    color: #929C47;
+    font-size: xx-large;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .numpad-meta {
+    display:flex;
     flex: 1;
-    background: red;
     flex-direction: row;
-    align-content:flex-start;
+    font-size: xx-small;
+    color: DarkGray;
 }
 
 .numpad-period {
+    text-align: left;
+    padding-left: 10px;
+    padding-bottom: 10px;
     width: 50%;
-    
+    flex:1;
 }
 
 .numpad-goal {
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 10px;
     width: 50%;
-    
-}
-
-
-button {
-    width: 100%;
-    height: 100%;
+    flex:1;
 }

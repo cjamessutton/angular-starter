@@ -40,9 +40,16 @@ export class NumPadComponent implements OnInit {
   ) {}
 
   public ngOnInit() {
-    this.numPadLocalState = this.numPadState.state;
     console.log('hello `NumPad` component');
+    this.numPadLocalState = this.numPadState.state;
+    /**
+     * this.title.getData().subscribe(data => this.data = data);
+     */
   }
   
-  
+  public backspace(){
+    let result = this.numPadState.backspace(this.numPadLocalState.displayText, this.numPadLocalState.point);
+    this.numPadLocalState.displayText = result.newValue;
+    this.numPadLocalState.point = result.newPoint;
+  }
 }

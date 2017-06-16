@@ -9,14 +9,14 @@ export class NumPadState {
     
     public _state: NumPadStateType = {
         "displayHeader": "Pushups",
-        "displayText": "0",
+        "displayText": "1234.5",
         "period": {
             "unit": "Week",
             "index": "1"
         },
         "done": 0,
         "goal": 200,
-        "point": false
+        "point": true //flag to track if a point has been entered
     }
     
     public get state(){
@@ -30,6 +30,13 @@ export class NumPadState {
     }
     
     
+    public backspace(oldValue : string, point : boolean){
+        let last = oldValue.slice(-1);
+        let newValue = oldValue.slice(0, -1);
+        let newPoint = last === '.' ? false : point;
+        newValue = newValue.length === 0 ? '0' : newValue;
+        return {newValue: newValue, newPoint: newPoint}
+    }
 
     
     private _clone(object: NumPadStateType) {

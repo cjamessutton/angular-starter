@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import {
   NgModule,
   ApplicationRef
@@ -26,6 +27,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { AboutComponent } from './about';
+import { NumPadComponent } from './numpad';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
@@ -53,6 +55,7 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
+    NumPadComponent,
     NoContentComponent,
     XLargeDirective
   ],
@@ -63,6 +66,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**

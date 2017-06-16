@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { MaterialModule } from '@angular/material';
 import {
   NgModule,
   ApplicationRef
@@ -25,9 +26,7 @@ import { AppComponent } from './app.component';
 import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLargeDirective } from './home/x-large';
+import { NumPadComponent } from './numpad';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -51,10 +50,8 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
     HomeComponent,
-    NoContentComponent,
-    XLargeDirective
+    NumPadComponent
   ],
   /**
    * Import Angular's modules.
@@ -63,6 +60,7 @@ type StoreType = {
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
   ],
   /**

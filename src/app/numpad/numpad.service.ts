@@ -30,12 +30,33 @@ export class NumPadState {
     }
     
     
-    public backspace(oldValue : string, point : boolean){
-        let last = oldValue.slice(-1);
-        let newValue = oldValue.slice(0, -1);
+    public backspace(oldText : string, point : boolean){
+        let last = oldText.slice(-1);
+        let newDisplayText = oldText.slice(0, -1);
         let newPoint = last === '.' ? false : point;
-        newValue = newValue.length === 0 ? '0' : newValue;
-        return {newValue: newValue, newPoint: newPoint}
+        newDisplayText = newDisplayText.length === 0 ? '0' : newDisplayText;
+        return {newDisplayText: newDisplayText, newPoint: newPoint}
+    }
+    
+    public type(oldText : string, newChar : string, point : boolean){
+        let newDisplayText = oldText;
+        let newPoint = point;
+        if(oldText === '0' && /[0-9\.]/.test(newChar) ){
+            if( newChar === '.'){
+                 newDisplayText = oldText + '.';
+                 newPoint = true;
+            }
+            else if( newChar !== '0') newDisplayText = newChar;
+        } else if( /[0-9\.]/.test(newChar) ){
+            if( newChar === '.' && !point ){
+                newPoint = true;
+                newDisplayText = oldText + '.';
+            } else if( newChar !== '.' ){
+                newDisplayText = oldText + newChar;
+            }
+        }
+        
+        return {newDisplayText: newDisplayText, newPoint: newPoint);
     }
 
     
